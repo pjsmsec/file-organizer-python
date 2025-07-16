@@ -44,11 +44,12 @@ A Python script to automatically organize files in a specified directory by thei
 ├── file1.pdf
 ├── photo.jpg
 └── notes.txt
-```
 </pre>
 
 <pre>
+<pre>
 ***After:***
+</pre>
 ```bash
 /downloads
 ├── pdf
@@ -57,7 +58,6 @@ A Python script to automatically organize files in a specified directory by thei
 │   └── photo.jpg
 └── txt
     └── notes.txt
-```
 </pre>
 
 ## Contributing
