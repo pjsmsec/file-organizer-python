@@ -27,16 +27,16 @@ A Python script to automatically organize files in a specified directory by thei
 
 3. The files will be organized into folders based on their extensions.
 
-  Example
+  **Example**
 
-Before:
+**Before:**
 
 /downloads
   file1.pdf
   photo.jpg
   notes.txt
 
-After:
+**After:**
 
 /downloads
   /pdf
@@ -46,6 +46,6 @@ After:
   /txt
     notes.txt
     
-Contributing
+**Contributing**
 
 Contributions are welcome! Feel free to open issues or submit pull requests.
