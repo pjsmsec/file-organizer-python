@@ -14,6 +14,7 @@ Features:
 
 import sys
 from pathlib import Path
+import logging
 
 """
 List all files in the given directory (excluding subdirectories).
@@ -94,3 +95,11 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# Basic logging configuration
+logging.basicConfig(
+    filename="file_organizer.log",
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S"
+)
