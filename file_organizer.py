@@ -43,13 +43,22 @@ def organize_files(files: list[Path], target_dir: Path) -> None:
     for file in files:
         # Get file extension without the leading dot, or 'no_extension' if none
         ext = file.suffix[1:].lower() if file.suffix else 'no_extension'
-
-        # Define folder path based on extension
         folder_path = target_dir / ext
+
+        # Skip if file is already in the correct folder
+        if file.parent == folder_path:
+            continue
+
         folder_path.mkdir(exist_ok=True)
 
         # Define destination and move the file
         destination = folder_path / file.name
+
+        # Handle naming conflict if destination file already exists
+        if destination.exists():
+            print(f"Conflict: '{destination}' already exists. Skipping '{file.name}'.")
+            continue
+
         file.rename(destination)
 
 """
