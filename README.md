@@ -18,34 +18,36 @@ A Python script to automatically organize files in a specified directory by thei
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/yourusername/file-organizer.git
-   cd file-organizer
+   git clone https://github.com/pjsmsec/file-organizer-python
+   cd file-organizer-python
 
 2. Run the script with the target directory as an argument (optional, defaults to current directory):
-
-   python file_organizer.py /path/to/directory
+  ``bash
+  python3 file_organizer.py /path/to/directory
+  Or, if the script has execution permission, you can run it directly:
+  ``bash
+  ./file_organizer.py /path/to/directory
 
 3. The files will be organized into folders based on their extensions.
 
-  **Example**
+***Example***
 
-**Before:**
-
+***Before:***
+```bash
 /downloads
-  file1.pdf
-  photo.jpg
-  notes.txt
+├── file1.pdf
+├── photo.jpg
+└── notes.txt
 
-**After:**
-
+***After:***
+```bash
 /downloads
-  /pdf
-    file1.pdf
-  /jpg
-    photo.jpg
-  /txt
-    notes.txt
-    
-**Contributing**
+├── pdf
+│   └── file1.pdf
+├── jpg
+│   └── photo.jpg
+└── txt
+    └── notes.txt
 
+## Contributing
 Contributions are welcome! Feel free to open issues or submit pull requests.
