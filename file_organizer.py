@@ -15,31 +15,31 @@ Features:
 import sys
 from pathlib import Path
 
+"""
+List all files in the given directory (excluding subdirectories).
+
+Args:
+    directory (Path): Target directory to scan.
+
+Returns:
+    list[Path]: List of Path objects representing each file found.
+"""
 def list_files(directory: Path) -> list[Path]:
-    """
-    List all files in the given directory (excluding subdirectories).
-
-    Args:
-        directory (Path): Target directory to scan.
-
-    Returns:
-        list[Path]: List of Path objects representing each file found.
-    """
     return [f for f in directory.iterdir() if f.is_file()]
 
+"""
+Organize files into folders based on their file extensions.
+
+For each file in the list:
+    - Determine the file extension (without the dot).
+    - Create a folder named after the extension if it does not exist.
+    - Move the file into the corresponding folder.
+
+Args:
+    files (list[Path]): List of Path objects representing files to organize.
+    target_dir (Path): The base directory where folders will be created.
+"""
 def organize_files(files: list[Path], target_dir: Path) -> None:
-    """
-    Organize files into folders based on their file extensions.
-
-    For each file in the list:
-        - Determine the file extension (without the dot).
-        - Create a folder named after the extension if it does not exist.
-        - Move the file into the corresponding folder.
-
-    Args:
-        files (list[Path]): List of Path objects representing files to organize.
-        target_dir (Path): The base directory where folders will be created.
-    """
     for file in files:
         # Get file extension without the leading dot, or 'no_extension' if none
         ext = file.suffix[1:].lower() if file.suffix else 'no_extension'
@@ -52,14 +52,14 @@ def organize_files(files: list[Path], target_dir: Path) -> None:
         destination = folder_path / file.name
         file.rename(destination)
 
-def main():
-    """
-    Entry point for the script.
+"""
+Entry point for the script.
 
     - Parses the target directory from command-line arguments (optional).
     - Defaults to the current working directory if none is provided.
     - Lists all files and organizes them by extension.
-    """
+"""
+def main():
     # Get directory from command line or use current directory
     if len(sys.argv) > 1:
         target_dir = Path(sys.argv[1])
