@@ -22,11 +22,16 @@ A Python script to automatically organize files in a specified directory by thei
    cd file-organizer-python
 
 2. Run the script with the target directory as an argument (optional, defaults to current directory):
-  ``bash
+
+  ```bash
   python3 file_organizer.py /path/to/directory
+  ```
+  
   Or, if the script has execution permission, you can run it directly:
+  
   ```bash
   ./file_organizer.py /path/to/directory
+  ```
 
 3. The files will be organized into folders based on their extensions.
 
