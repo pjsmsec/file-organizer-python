@@ -33,12 +33,15 @@ A Python script to automatically organize files in a specified directory by thei
 ***Example***
 
 ***Before:***
+<pre>
 ```bash
 /downloads
 ├── file1.pdf
 ├── photo.jpg
 └── notes.txt
+</pre>
 
+<pre>
 ***After:***
 ```bash
 /downloads
@@ -48,6 +51,7 @@ A Python script to automatically organize files in a specified directory by thei
 │   └── photo.jpg
 └── txt
     └── notes.txt
+</pre>
 
 ## Contributing
 Contributions are welcome! Feel free to open issues or submit pull requests.
