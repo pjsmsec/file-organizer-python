@@ -18,8 +18,26 @@ import shutil
 from pathlib import Path
 
 def main():
-    """Main function. Placeholder for script logic"""
-    pass
+    """
+     Main function to get the target directory from command line arguments.
+
+    - If a directory path is provided as the first argument, use it.
+    - Otherwise, default to the current working directory.
+    - Validates if the provided path exists and is a directory.
+    """
+    # Check if user passed a directory path argument
+    if len(sys.argv) > 1:
+        target_dir = Path(sys.argv[1])
+    else:
+        # Default to current directory
+        target_dir = Path.cwd()
+    
+    # Validate the target directory
+    if not target_dir.exists() or not target_dir.is_dir():
+        print(f"Error: The directory '{target_dir}' does not exist or is not a directory.")
+        sys.exit(1)
+
+    print(f"Organizing files in directory: {target_dir}")
 
 if __name__ == "__main__":
     main()
