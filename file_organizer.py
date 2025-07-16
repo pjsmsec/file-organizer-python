@@ -17,6 +17,18 @@ import sys
 import shutil
 from pathlib import Path
 
+"""
+List all files in the given directory (not including subdirectories).
+
+Args:
+    directory (Path): Target directory to scan.
+
+Returns:
+    list: List of Path objects for each file found.
+"""
+def list_files(directory: Path) -> list:
+    return [f for f in directory.iterdir() if f.is_file()]
+
 def main():
     """
      Main function to get the target directory from command line arguments.
@@ -38,6 +50,11 @@ def main():
         sys.exit(1)
 
     print(f"Organizing files in directory: {target_dir}")
+
+    files = list_files(target_dir)
+    print(f"Found {len(files)} files:")
+    for f in files:
+        print(f" - {f.name}")
 
 if __name__ == "__main__":
     main()
