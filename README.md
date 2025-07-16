@@ -25,7 +25,6 @@ A Python script to automatically organize files in a specified directory by thei
   ``bash
   python3 file_organizer.py /path/to/directory
   Or, if the script has execution permission, you can run it directly:
-  ``bash
   ./file_organizer.py /path/to/directory
 
 3. The files will be organized into folders based on their extensions.
