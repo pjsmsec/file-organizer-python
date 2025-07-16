@@ -34,6 +34,18 @@ A Python script to automatically organize files in a specified directory by thei
    ./file_organizer.py /path/to/directory
    ```
 
+   > **Note:** To run the script directly by its name (e.g. `./file_organizer.py`), ensure it has execution permission:
+   >
+   > ```bash
+   > chmod +x file_organizer.py
+   > ```
+   >
+   > Also, make sure the first line of the script contains the shebang:
+   >
+   > ```python
+   > #!/usr/bin/env python3
+   > ```
+
 3. The files will be organized into folders based on their extensions.
 
 ### Example
