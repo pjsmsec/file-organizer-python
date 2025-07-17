@@ -18,13 +18,13 @@ from pathlib import Path
 import logging
 from datetime import datetime
 
-def setup_logging(target_dir: Path):
-    """
-    Setup logging configuration to write logs to a timestamped file inside a 'logs' directory.
+"""
+Setup logging configuration to write logs to a timestamped file inside a 'logs' directory.
 
-    Args:
-        target_dir (Path): Directory where the 'logs' folder will be created.
-    """
+Args:
+    target_dir (Path): Directory where the 'logs' folder will be created.
+"""
+def setup_logging(target_dir: Path):
     log_dir = target_dir / "logs"
     log_dir.mkdir(exist_ok=True)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -40,31 +40,31 @@ def setup_logging(target_dir: Path):
     print(f"Logging to {log_file}")
     logging.info(f"Logging started. Log file: {log_file}")
 
+"""
+List all files in the given directory (excluding subdirectories).
+
+Args:
+    directory (Path): Target directory to scan.
+
+Returns:
+    list[Path]: List of Path objects representing each file found.
+"""
 def list_files(directory: Path) -> list[Path]:
-    """
-    List all files in the given directory (excluding subdirectories).
-
-    Args:
-        directory (Path): Target directory to scan.
-
-    Returns:
-        list[Path]: List of Path objects representing each file found.
-    """
     return [f for f in directory.iterdir() if f.is_file()]
 
+"""
+Organize files into folders based on their file extensions.
+
+For each file in the list:
+    - Determine the file extension (without the dot).
+    - Create a folder named after the extension if it does not exist.
+    - Move the file into the corresponding folder.
+
+Args:
+    files (list[Path]): List of Path objects representing files to organize.
+    target_dir (Path): The base directory where folders will be created.
+"""
 def organize_files(files: list[Path], target_dir: Path) -> None:
-    """
-    Organize files into folders based on their file extensions.
-
-    For each file in the list:
-        - Determine the file extension (without the dot).
-        - Create a folder named after the extension if it does not exist.
-        - Move the file into the corresponding folder.
-
-    Args:
-        files (list[Path]): List of Path objects representing files to organize.
-        target_dir (Path): The base directory where folders will be created.
-    """
     for file in files:
         ext = file.suffix[1:].lower() if file.suffix else 'no_extension'
         folder_path = target_dir / ext
@@ -86,15 +86,15 @@ def organize_files(files: list[Path], target_dir: Path) -> None:
         print(f"Moved '{file.name}' to '{folder_path}'.")
         logging.info(f"Moved '{file.name}' to '{folder_path}'.")
 
-def main():
-    """
-    Entry point for the script.
+"""
+Entry point for the script.
 
     - Parses the target directory from command-line arguments (optional).
     - Defaults to the current working directory if none is provided.
     - Sets up logging.
     - Lists all files and organizes them by extension.
-    """
+"""
+def main():
     if len(sys.argv) > 1:
         target_dir = Path(sys.argv[1])
     else:
