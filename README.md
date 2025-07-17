@@ -1,6 +1,6 @@
 # File Organizer
 
-A Python script to automatically organize files in a specified directory by their file type and modification date. This helps keep your directories tidy and easy to navigate.
+A Python script to automatically organize files in a specified directory by their file type. This helps keep your directories tidy and easy to navigate.
 
 ## Features
 
