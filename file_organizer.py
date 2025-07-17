@@ -9,8 +9,8 @@ Features:
 - Automatically detects and categorizes files by type (e.g., .txt, .jpg).
 - Creates directories for each file type if not already present.
 - Moves files into the corresponding directories.
+- Logs all operations with timestamps and status.
 - Supports optional command-line argument to specify a target directory.
-- Logs operations into a timestamped log file inside a 'logs' directory.
 """
 
 import sys
